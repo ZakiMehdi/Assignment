@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
-import com.example.demo.ObjectMapperUtils;
+import com.example.demo.common.utils.ObjectMapperUtils;
+
 import lombok.Data;
 import lombok.Value;
 

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.common.utils;
 
 
 import java.net.URI;
