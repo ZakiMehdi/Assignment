@@ -1,0 +1,15 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 8090
+
+security:
+  oauth2:
+    client:
+      clientId: travel-api-client
+      clientSecret: psw
+      accessTokenUri: http://localhost:8080/oauth/token
+      tokenName: access_token
+      grant-type: client_credentials
