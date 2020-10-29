@@ -9,7 +9,18 @@ public class ResponseBody {
     @JsonProperty("_embedded")
     private Embedded embedded;
 
-    @Override
+    
+    public Embedded getEmbedded() {
+		return embedded;
+	}
+
+
+	public void setEmbedded(Embedded embedded) {
+		this.embedded = embedded;
+	}
+
+
+	@Override
     public String toString() {
         return ObjectMapperUtils.getStrFromObj(this);
     }
