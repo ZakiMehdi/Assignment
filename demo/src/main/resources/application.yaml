@@ -1,6 +1,10 @@
 spring:
   main:
     allow-bean-definition-overriding: true
+  
+  resources:
+    static-locations:
+      -file:/var/www/static,classpath:static
 
 server:
   port: 8090
@@ -14,3 +18,12 @@ security:
       accessTokenUri: http://localhost:8080/oauth/token
       tokenName: access_token
       grant-type: client_credentials
+      
+management:  endpoint:    httptrace:      enabled: true
+  endpoints:    web:      exposure:        include: "prometheus"
+  metrics:
+    distribution:      percentiles-histogram:        http:
+          server:
+            requests: true    enable:      jvm: true           export:      prometheus:        enabled: true
+                   
+                              
