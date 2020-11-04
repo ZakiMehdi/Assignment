@@ -4,7 +4,7 @@ spring:
   
   resources:
     static-locations:
-      -file:/var/www/static,classpath:static
+      - 'classpath:resources/static'
 
 server:
   port: 8090
@@ -19,8 +19,14 @@ security:
       tokenName: access_token
       grant-type: client_credentials
       
-management:  endpoint:    httptrace:      enabled: true
-  endpoints:    web:      exposure:        include: "prometheus"
+management:
+#  server:#    port: 8091  endpoint:    httptrace:      enabled: true
+    health:      show-details: always
+    metrics:      enabled: true
+    prometheus:      enabled: true
+      
+  endpoints:    web:
+#      base-path: "travel"      exposure:        include: "*"
   metrics:
     distribution:      percentiles-histogram:        http:
           server:
